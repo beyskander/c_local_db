@@ -1,0 +1,88 @@
+void certification()
+{
+    int choice;
+    do 
+    {
+    system("cls");
+    printf("\t\t\t\t====== Search Student Information ======\n");
+    printf("\n\t\t\tChoose your option :\n\t\t\t1. HUAWEI\n\t\t\t2. Linux Professional Institute\n\t\t\t3. Oracle\n\t\t\t4. Redhat\n\t\t\t5. Cisco\n\t\t\t6. Amazon\n\t\t\t0. Exit");
+    printf("\n\n\t\t\tEnter Your Option : ");
+    scanf("%d", &choice);
+    switch(choice)
+    {
+    
+    case 1:
+
+    system("cls");
+    printf("\t\t\t\t====== Search Student Information ======\n");
+    printf("\n");
+    printf ("\n\t\t\t******Huawei******\n");
+    printf("\t\t\t----------------------------------- ");
+    printf("\n\t\t\t1. HCIA-AI\n\t\t\t2. HCIA-WLAN\n\t\t\t3. HCIA-R&S\n\t\t\t4. HCIA-Cloud Computing\n\t\t\t5. HCIA-Security\n\t\t\t6. HCIA-5G");
+    getch();
+    break;
+     
+    case 2:
+    system("cls");
+    printf("\t\t\t\t====== Search Student Information ======\n");
+    printf("\n");
+    printf ("\n\t\t\t\******Linux Professional Institute******\n");
+    printf("\t\t\t----------------------------------------------");
+    printf("\n\t\t\t1. LPC-1\n\t\t\t2. LPC-2\n\t\t\t3. LPC-3");
+    getch();
+    break;
+
+    case 3:
+    system("cls");
+    printf("\t\t\t\t====== Search Student Information ======\n");
+    printf("\n");
+    printf ("\n\t\t\t******Oracle******\n");
+    printf("\t\t\t----------------------------------- ");
+    printf("\n\t\t\t1. OCA Java 8\n\t\t\t2. OCP Java 8\n\t\t\t3. OCA Database SQL");
+    getch();
+    break;
+
+    case 4:
+    system("cls");
+    printf("\t\t\t\t====== Search Student Information ======\n");
+    printf("\n");
+    printf ("\n\t\t\t******Redhat******\n");
+    printf("\t\t\t----------------------------------- ");
+    printf("\n\t\t\t1. System Administration\n\t\t\t2. JBOSS ADMINISTRATION 8\n\t\t\t3. Architect\n\t\t\t4.Engineer");
+    getch();
+    break;
+
+    case 5:
+    system("cls");
+    printf("\t\t\t\t====== Search Student Information ======\n");
+    printf("\n");
+    printf ("\n\t\t\t******Cisco******\n");
+    printf("\t\t\t----------------------------------- ");
+    printf("\n\t\t\t1. CCNA\n\t\t\t2. CCNP\n\t\t\t3. CCENT");
+    getch();
+    break;
+    
+
+    case 6:
+    system("cls");
+    printf("\t\t\t\t====== Search Student Information ======\n");
+    printf("\n");
+    printf ("\n\t\t\t******Amazon******\n");
+    printf("\t\t\t----------------------------------- ");
+    printf("\n\t\t\t1. AWS loud Practitioner\n\t\t\t2. AWS Solution Architect Associate\n\t\t\t3. AWS SysOps Administrator\n\t\t\t4. Developer\n\t\t\t5. AWS DevOps Enginneer Professional\n\t\t\t6. AWS Solution Architect Professional");
+    getch();
+    break;
+        
+    case 0:
+    printf("\n\t\t\t====== Thank You ======");
+    getch();
+    break;
+    
+    default:
+    printf("\n\t\t\tInvalid Option, Please Enter Right Option !\n");
+    getch();
+
+        }
+
+
+        }   while (choice != 0)

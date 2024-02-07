@@ -1,0 +1,799 @@
+#include <stdio.h>
+#include <string.h>
+#include <conio.h>
+//enregitrement  student
+typedef struct Student
+{
+    char Name[50];
+    char Id[15];
+    char Dept[10];
+    char Address[100];
+    char Num[15];
+    float Moy;
+    float Moy1;
+} Student;
+
+//prototype des fonctions
+int logscreen();// login screen
+int logscreen1();
+void createAccount();
+void displayInfo();
+void updateInfo();
+void deleteInfo();
+void searchInfo();
+void searchInfo1();
+void certification();
+void clubs();
+int main()
+{
+    //espace manager
+
+    char option;
+    char choix;
+    char choix1;
+do
+    {
+
+        system("cls");
+        system("COLOR 9F");
+
+        printf("\t\t\t======  PROJEcT C ======\n");
+        printf("\n\t\t Elaborated by: ");
+        printf("\n\t\t\t\t Rahma SASSI");
+        printf("\n\t\t\t\t Yasser BEN AMMAR");
+        printf("\n\t\t\t\t Mariem JAZIRI");
+        printf("\n\t\t\t\t Rayen BOUROUBA");
+        printf("\n\t\t\t\t Sejda KAMMOUN");
+        printf("\n\t\t\t\t Yosr GHAZOUANI");
+        printf("\n\n\n\t\t\twould you like to start: ");
+        scanf(" %c", &choix1);
+         switch (choix1)
+        { case 'y':
+
+
+    while (choix != '0')
+    {
+
+        system("cls");
+        system("COLOR 9F");
+
+        printf("\t\t======  TEK-UP UNIVERSITY ======\n");
+        printf("\n\t\t\t1. STUDENT AREA");
+        printf("\n\t\t\t2. MANAGMENT AREA");
+        printf("\n\t\t\t0. EXIT");
+        printf("\n\n\n\t\t\tEnter Your Option: ");
+        scanf(" %c", &choix);
+    switch (choix)
+        {
+        case '1':
+            {
+            logscreen1();
+
+   do  {
+        system("cls");
+        printf("\t\t====== Student Area Tek-up ======\n");
+        printf("\n\t\t\t1. Student Information");
+        printf("\n\t\t\t2. Certifications");
+        printf("\n\t\t\t3. Clubs");
+        printf("\n\t\t\t0. Exit");
+
+        printf("\n\n\n\t\t\tEnter Your Option: ");
+        scanf(" %c", &option);
+
+        switch (option)
+        {
+        case '1':
+            searchInfo1();
+            break;
+        case '2':
+            certification();
+            break;
+        case '3':
+            clubs();
+            break;
+        case '0':
+            printf("\n\t\t\t====== Thank You ======");
+            getch();
+            break;
+        default:
+            printf("\n\t\t\tInvalid Option, Please Enter Right Option !\n");
+            getch();
+        }
+    }   while (option != '0');
+            break;}
+        case '2':
+            {
+            logscreen();
+
+
+    do
+    {
+        system("cls");
+        printf("\t\t====== Management System Tek-up ======\n");
+        printf("\n\t\t\t1. Create Student Account");
+        printf("\n\t\t\t2. Display All Students Information");
+        printf("\n\t\t\t3. Update Student Information");
+        printf("\n\t\t\t4. Delete Student Information");
+        printf("\n\t\t\t5. Search Student Information");
+        printf("\n\t\t\t0. Exit");
+
+        printf("\n\n\n\t\t\tEnter Your Option: ");
+        scanf(" %c", &option);
+
+        switch (option)
+        {
+        case '1':
+            createAccount();
+            break;
+        case '2':
+            displayInfo();
+            break;
+        case '3':
+            updateInfo();
+            break;
+        case '4':
+            deleteInfo();
+            break;
+        case '5':
+            searchInfo();
+            break;
+        case '0':
+            printf("\n\t\t\t====== Thank You ======");
+            getch();
+            break;
+        default:
+            printf("\n\t\t\tInvalid Option, Please Enter Right Option !\n");
+            getch();
+        }
+    } while (option != '0');
+    break;
+            }
+        }
+        }break;}}
+        while (choix1 != '0');
+    return 0;
+}
+
+int logscreen1()
+{
+  char username[30];
+  char password[30];
+  int try = 0;
+  int true = 1;
+  do
+  {
+    system("cls");
+    printf("\n\n\n\n\n\n\n\n\n\n");
+    printf("\t\t\t\t\t");
+    printf("Username: ");
+    scanf("%s",username);
+    printf("\t\t\t\t\t");
+    printf("\n");
+    printf("\t\t\t\t\t");
+    printf("Password: ");
+    scanf("%s",password);
+    if(strcmp(username,"etudiant")==0 && strcmp(password,"tekup")==0)
+      {
+        printf("\n\n");
+        printf("\t\t\t\t");
+        printf("You are accessed to the system!\n\n");
+        printf("\t\t\t\t   Press Enter to continue...");
+        getchar();
+
+        system("cls");
+        true =0;
+      }
+      else
+      {
+        system("cls");
+        try = try+1;
+        printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        printf("\t\t\t\t\t");
+        printf("No. of attempts remain: %d",3-try);
+        getchar();
+        if(try>=3)
+        {
+
+          printf("\t\t\t\t\t\t");
+          printf("\n");
+          printf("\t\t\t\t");
+          printf("   No permission to enter the system!" );
+          getchar();
+
+
+
+      }
+  }
+ }
+ while(true==1);
+}
+int logscreen()
+{
+  char username[30];
+  char password[30];
+  int try = 0;
+  int true = 1;
+  do
+  {
+    system("cls");
+    printf("\n\n\n\n\n\n\n\n\n\n");
+    printf("\t\t\t\t\t");
+    printf("Username: ");
+    scanf("%s",username);
+    printf("\t\t\t\t\t");
+    printf("\n");
+    printf("\t\t\t\t\t");
+    printf("Password: ");
+    scanf("%s",password);
+    if(strcmp(username,"admin")==0 && strcmp(password,"admin123")==0)
+      {
+        printf("\n\n");
+        printf("\t\t\t\t");
+        printf("You are accessed to the system!\n\n");
+        printf("\t\t\t\t   Press Enter to continue...");
+
+        system("cls");
+        true =0;
+      }
+      else
+      {
+        system("cls");
+        try = try+1;
+        printf("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
+        printf("\t\t\t\t\t");
+        printf("No. of attempts remain: %d",3-try);
+        if(try>=3)
+        {
+
+          printf("\t\t\t\t\t\t");
+          printf("\n");
+          printf("\t\t\t\t");
+          printf("   No permission to enter the system!" );
+
+      ;
+      }
+  }
+ }
+ while(true==1);
+}
+
+void createAccount()
+{
+    FILE *fileOne = fopen("studentInfo.bin", "ab+");
+
+    if (fileOne == NULL)
+    {
+        printf("\n\t\t\tError !\n");
+    }
+
+    Student studInfo;
+
+    system("cls");
+
+    printf("\t\t\t====== Create Student Account ======\n");
+
+    printf("\n\t\t\tEnter Student's Name : ");
+    getchar();
+    gets(studInfo.Name);
+    printf("\t\t\tEnter Student's CIN : ");
+    gets(studInfo.Id);
+    printf("\t\t\tEnter Student's Class : ");
+    gets(studInfo.Dept);
+    printf("\t\t\tEnter Student's Address : ");
+    gets(studInfo.Address);
+    printf("\t\t\tEnter Student's Contact Number : ");
+    gets(studInfo.Num);
+    printf("\t\t\tEnter Student's average 2019/2020 : ");
+    scanf("%f", &studInfo.Moy);
+    printf("\t\t\tEnter Student's average 2020/2021 : ");
+    scanf("%f", &studInfo.Moy1);
+
+    fwrite(&studInfo, sizeof(studInfo), 1, fileOne);
+
+    printf("\n\n\t\t\tInformations have been stored sucessfully\n");
+    printf("\n\n\t\t\tEnter any keys to continue.......");
+    getch();
+
+    fclose(fileOne);
+}
+
+void displayInfo()
+{
+    FILE *fileOne = fopen("studentInfo.bin", "rb");
+
+    if (fileOne == NULL)
+    {
+        printf("\n\t\t\tError !\n");
+    }
+
+    Student studInfo;
+
+    system("cls");
+
+    printf("\t\t\t\t\t\t\t====== All Students Information 'Tek-up'======\n");
+
+    printf("\n\n\t\t%-20s%-13s%-10s%-25s%-15s%-s\t%- s\n\n", "Name", "CIN", "Class", "Address", "Contact", "Average 2019/2020", "Average 2020/2021");
+    printf("\t\t-------------------------------------------------------------------------------------------------------------------------");
+
+    while (fread(&studInfo, sizeof(studInfo), 1, fileOne) == 1)
+    {
+        printf("\n\n\t\t%-20s%-13s%-10s%-25s%-15s%-.2f\t\t%-.2f", studInfo.Name, studInfo.Id, studInfo.Dept, studInfo.Address, studInfo.Num, studInfo.Moy,studInfo.Moy1);
+    }
+
+    printf("\n\n\t\tEnter any keys to continue.......");
+    getch();
+
+    fclose(fileOne);
+}
+
+void updateInfo()
+{
+    FILE *fileOne = fopen("studentInfo.bin", "rb");
+    FILE *temp = fopen("temp.bin", "wb");
+
+    Student studInfo, tempInfo;
+
+    int choice, i = 0;
+
+    if (fileOne == NULL || temp == NULL)
+    {
+        printf("\n\t\t\tError !\n");
+    }
+
+    system("cls");
+
+    printf("\t\t\t\t====== Update Students Information ======\n");
+
+    printf("\n\t\t\tEnter Student's ID : ");
+    getchar();
+    gets(tempInfo.Id);
+
+    while (fread(&studInfo, sizeof(studInfo), 1, fileOne) == 1)
+    {
+        if (strcmp(studInfo.Id, tempInfo.Id) == 0)
+        {
+            i++;
+            printf("\n\t\t\tChoose your option :\n\t\t\t1.Update Student Name\n\t\t\t2.Update Student Class\n\t\t\t3.Update Student Address\n\t\t\t4.Update Student Contact Number\n\t\t\t5.Update Student Average 2019/2020.\n\t\t\t6.Update Student Average 2020/2021");
+            printf("\n\n\t\t\tEnter Your Option : ");
+            scanf("%d", &choice);
+            if (choice == 1)
+            {
+                printf("\n\t\t\tEnter Student's Name to Update: ");
+                getchar();
+                gets(tempInfo.Name);
+                strcpy(studInfo.Name, tempInfo.Name);
+
+                fwrite(&studInfo, sizeof(studInfo), 1, temp);
+                printf("\n\n\t\t\tUpdated successfully!\n\n");
+            }
+            else if (choice == 2)
+            {
+                printf("\n\t\t\tEnter Student's Class to Update: ");
+                getchar();
+                gets(tempInfo.Dept);
+                strcpy(studInfo.Dept, tempInfo.Dept);
+
+                fwrite(&studInfo, sizeof(studInfo), 1, temp);
+                printf("\n\n\t\t\tUpdated successfully!\n\n");
+            }
+            else if (choice == 3)
+            {
+                printf("\n\t\t\tEnter Student's Address to Update: ");
+                getchar();
+                gets(tempInfo.Address);
+                strcpy(studInfo.Address, tempInfo.Address);
+
+                fwrite(&studInfo, sizeof(studInfo), 1, temp);
+                printf("\n\n\t\t\tUpdated successfully!\n\n");
+            }
+            else if (choice == 4)
+            {
+                printf("\n\t\t\tEnter Student's Contact Number to Update: ");
+                getchar();
+                gets(tempInfo.Num);
+                strcpy(studInfo.Num, tempInfo.Num);
+
+                fwrite(&studInfo, sizeof(studInfo), 1, temp);
+                printf("\n\n\t\t\tUpdated successfully!\n\n");
+            }
+            else if (choice == 5)
+            {
+                printf("\n\t\t\tEnter Student's Average 2019/2020 to Update: ");
+                scanf("%f", &tempInfo.Moy);
+                studInfo.Moy = tempInfo.Moy;
+
+                fwrite(&studInfo, sizeof(studInfo), 1, temp);
+                printf("\n\n\t\t\tUpdated successfully!\n\n");
+            }
+             else if (choice == 6)
+            {
+                printf("\n\t\t\tEnter Student's Average 2020/2021 to Update: ");
+                scanf("%f", &tempInfo.Moy1);
+                studInfo.Moy1 = tempInfo.Moy1;
+
+                fwrite(&studInfo, sizeof(studInfo), 1, temp);
+                printf("\n\n\t\t\tUpdated successfully!\n\n");
+            }
+            else
+            {
+                printf("\n\t\t\tInvalid Option.");
+                fwrite(&studInfo, sizeof(studInfo), 1, temp);
+            }
+        }
+        else
+        {
+            fwrite(&studInfo, sizeof(studInfo), 1, temp);
+        }
+    }
+
+    fclose(fileOne);
+    fclose(temp);
+
+    remove("studentInfo.bin");
+    rename("temp.bin", "studentInfo.bin");
+
+    if (i == 0)
+    {
+        printf("\n\t\t\tStudent CIN is not found");
+    }
+
+    printf("\n\n\t\t\tEnter any keys to continue.......");
+    getch();
+}
+
+void deleteInfo()
+{
+    FILE *fileOne = fopen("studentInfo.bin", "rb");
+    FILE *temp = fopen("temp.bin", "wb");
+
+    Student studInfo, tempInfo;
+
+    int choice, i = 0;
+
+    if (fileOne == NULL || temp == NULL)
+    {
+        printf("\n\t\t\tError !\n");
+    }
+
+    system("cls");
+
+    printf("\t\t\t\t====== Delete Student Information ======\n");
+
+    printf("\n\t\t\tEnter Student's CIN : ");
+    getchar();
+    gets(tempInfo.Id);
+
+    while (fread(&studInfo, sizeof(studInfo), 1, fileOne) == 1)
+    {
+        if (strcmp(studInfo.Id, tempInfo.Id) == 0)
+        {
+            i++;
+            printf("\n\t\t\tAre you sure to delete ??\n\t\t\t\t1.Yes\n\t\t\t\t2.Back\n\t\t\t\tEnter Your Option : ");
+            scanf("%d", &choice);
+            if (choice == 1)
+            {
+                printf("\n\n\t\t\tInformation has been deleted successfully!\n\n");
+            }
+            else if (choice == 2)
+            {
+                fwrite(&studInfo, sizeof(studInfo), 1, temp);
+            }
+            else
+            {
+                printf("\n\t\t\tInvalid Option");
+                fwrite(&studInfo, sizeof(studInfo), 1, temp);
+            }
+        }
+        else
+        {
+            fwrite(&studInfo, sizeof(studInfo), 1, temp);
+        }
+    }
+
+    fclose(fileOne);
+    fclose(temp);
+
+    remove("studentInfo.bin");
+    rename("temp.bin", "studentInfo.bin");
+
+    if (i == 0)
+    {
+        printf("\n\t\t\tStudent CIN is not found");
+    }
+
+    printf("\n\n\t\t\tEnter any keys to continue.......");
+    getch();
+}
+
+void searchInfo()
+{
+    FILE *fileOne = fopen("studentInfo.bin", "rb");
+
+    Student studInfo;
+
+    int choice, i = 0;
+    char ID[20], DEPT[10];
+
+    if (fileOne == NULL)
+    {
+        printf("\n\t\t\tError !\n");
+    }
+
+    system("cls");
+
+    printf("\t\t\t\t====== Search Student Information ======\n");
+
+    printf("\n\t\t\tChoose your option :\n\t\t\t1.Search by Student CIN\n\t\t\t2.Search by Student Class");
+    printf("\n\n\t\t\tEnter Your Option : ");
+    scanf("%d", &choice);
+
+    if (choice == 1)
+    {
+        system("cls");
+        printf("\t\t\t\t====== Search Student Information ======\n");
+        printf("\n\n\t\t\tEnter Student CIN : ");
+        getchar();
+        gets(ID);
+        while (fread(&studInfo, sizeof(studInfo), 1, fileOne) == 1)
+        {
+            if (strcmp(studInfo.Id, ID) == 0)
+            {
+                i++;
+                printf("\n\t\t\tStudent Name : %s\n\t\t\tStudent CIN : %s\n\t\t\tStudent Class : %s\n\t\t\tStudent Address : %s\n\t\t\tStudent Contact Number : %s\n\t\t\tStudent Average 2019/2020 : %.2f\n\t\t\tStudent Average 2020/2021 : %.2f\n", studInfo.Name, studInfo.Id, studInfo.Dept, studInfo.Address, studInfo.Num, studInfo.Moy, studInfo.Moy1);
+            }
+        }
+        if (i == 0)
+        {
+            printf("\n\t\t\tStudent CIN is not found");
+        }
+    }
+    else if (choice == 2)
+    {
+        system("cls");
+        printf("\t\t\t\t\t====== Search Student Information 'Tek-up'======\n");
+        printf("\n\n\t\t\tEnter Student Class : ");
+        getchar();
+        gets(DEPT);
+        printf("\n\n\t\t%-20s%-13s%-10s%-25s%-15s%-s\t%-s\n", "Name", "CIN", "Class", "Address", "Contact", "Average 2019/2020", "Average 2020/2021");
+        printf("\t\t-------------------------------------------------------------------------------------------------------------------------------------");
+        while (fread(&studInfo, sizeof(studInfo), 1, fileOne) == 1)
+        {
+            if (stricmp(studInfo.Dept, DEPT) == 0)
+            {
+                i++;
+                printf("\n\n\t\t%-20s%-13s%-10s%-25s%-15s%-.2f\t\t%-.2f", studInfo.Name, studInfo.Id, studInfo.Dept, studInfo.Address, studInfo.Num, studInfo.Moy, studInfo.Moy1);
+            }
+        }
+        if (i == 0)
+        {
+            printf("\n\t\t\tStudent CIN is not found");
+        }
+    }
+    else
+    {
+        printf("\n\t\t\tInvalid Option");
+    }
+
+    fclose(fileOne);
+
+    printf("\n\n\n\t\t\tEnter any keys to continue.......");
+    getch();
+}
+void searchInfo1()
+{
+    FILE *fileOne = fopen("studentInfo.bin", "rb");
+
+    Student studInfo;
+
+    int choice, i = 0;
+    char ID[20], DEPT[10];
+
+    if (fileOne == NULL)
+    {
+        printf("\n\t\t\tError !\n");
+    }
+
+    system("cls");
+
+    printf("\t\t\t\t====== Search Student Information ======\n");
+
+        system("cls");
+        printf("\t\t\t\t====== Search Student Information ======\n");
+        printf("\n\n\t\t\tEnter your CIN : ");
+        getchar();
+        gets(ID);
+        while (fread(&studInfo, sizeof(studInfo), 1, fileOne) == 1)
+        {
+            if (strcmp(studInfo.Id, ID) == 0)
+            {
+                i++;
+                printf("\n\t\t\tStudent Name : %s\n\t\t\tStudent CIN : %s\n\t\t\tStudent Class : %s\n\t\t\tStudent Address : %s\n\t\t\tStudent Contact Number : %s\n\t\t\tStudent Average 2019/2020 : %.2f\n\t\t\tStudent Average 2020/2021 : %.2f\n", studInfo.Name, studInfo.Id, studInfo.Dept, studInfo.Address, studInfo.Num, studInfo.Moy, studInfo.Moy1);
+            }
+        }
+        if (i == 0)
+        {
+            printf("\n\t\t\tStudent CIN is not found");
+        }
+
+
+
+
+    fclose(fileOne);
+
+    printf("\n\n\n\t\t\tEnter any keys to continue.......");
+    getch();
+}
+void certification()
+{
+    int choice;
+    do 
+    {
+    system("cls");
+    printf("\t\t\t\t====== Search Student Information ======\n");
+    printf("\n\t\t\tChoose your option :\n\t\t\t1. HUAWEI\n\t\t\t2. Linux Professional Institute\n\t\t\t3. Oracle\n\t\t\t4. Redhat\n\t\t\t5. Cisco\n\t\t\t6. Amazon\n\t\t\t0. Exit");
+    printf("\n\n\t\t\tEnter Your Option : ");
+    scanf("%d", &choice);
+    switch(choice)
+    {
+    
+    case 1:
+
+    system("cls");
+    printf("\t\t\t\t====== Search Student Information ======\n");
+    printf("\n");
+    printf ("\n\t\t\t******Huawei******\n");
+    printf("\t\t\t----------------------------------- ");
+    printf("\n\t\t\t1. HCIA-AI\n\t\t\t2. HCIA-WLAN\n\t\t\t3. HCIA-R&S\n\t\t\t4. HCIA-Cloud Computing\n\t\t\t5. HCIA-Security\n\t\t\t6. HCIA-5G");
+    getch();
+    break;
+     
+    case 2:
+    system("cls");
+    printf("\t\t\t\t====== Search Student Information ======\n");
+    printf("\n");
+    printf ("\n\t\t\t\******Linux Professional Institute******\n");
+    printf("\t\t\t----------------------------------------------");
+    printf("\n\t\t\t1. LPC-1\n\t\t\t2. LPC-2\n\t\t\t3. LPC-3");
+    getch();
+    break;
+
+    case 3:
+    system("cls");
+    printf("\t\t\t\t====== Search Student Information ======\n");
+    printf("\n");
+    printf ("\n\t\t\t******Oracle******\n");
+    printf("\t\t\t----------------------------------- ");
+    printf("\n\t\t\t1. OCA Java 8\n\t\t\t2. OCP Java 8\n\t\t\t3. OCA Database SQL");
+    getch();
+    break;
+
+    case 4:
+    system("cls");
+    printf("\t\t\t\t====== Search Student Information ======\n");
+    printf("\n");
+    printf ("\n\t\t\t******Redhat******\n");
+    printf("\t\t\t----------------------------------- ");
+    printf("\n\t\t\t1. System Administration\n\t\t\t2. JBOSS ADMINISTRATION 8\n\t\t\t3. Architect\n\t\t\t4.Engineer");
+    getch();
+    break;
+
+    case 5:
+    system("cls");
+    printf("\t\t\t\t====== Search Student Information ======\n");
+    printf("\n");
+    printf ("\n\t\t\t******Cisco******\n");
+    printf("\t\t\t----------------------------------- ");
+    printf("\n\t\t\t1. CCNA\n\t\t\t2. CCNP\n\t\t\t3. CCENT");
+    getch();
+    break;
+    
+
+    case 6:
+    system("cls");
+    printf("\t\t\t\t====== Search Student Information ======\n");
+    printf("\n");
+    printf ("\n\t\t\t******Amazon******\n");
+    printf("\t\t\t----------------------------------- ");
+    printf("\n\t\t\t1. AWS loud Practitioner\n\t\t\t2. AWS Solution Architect Associate\n\t\t\t3. AWS SysOps Administrator\n\t\t\t4. Developer\n\t\t\t5. AWS DevOps Enginneer Professional\n\t\t\t6. AWS Solution Architect Professional");
+    getch();
+    break;
+        
+    case 0:
+    printf("\n\t\t\t====== Thank You ======");
+    getch();
+    break;
+    
+    default:
+    printf("\n\t\t\tInvalid Option, Please Enter Right Option !\n");
+    getch();
+
+        }
+
+
+        }   while (choice != 0);
+
+}
+
+void clubs()
+{
+    int x;
+
+do
+    {
+    system("cls");
+    printf("\t\t\t\t====== List of Clubs ======\n");
+    printf("\n\t\t\t1. Spark club");
+    printf("\n\t\t\t2. ISACA tek-up student group");
+    printf("\n\t\t\t3. ACM TEK-UP");
+    printf("\n\t\t\t4. IEEE TEK-UP");
+    printf("\n\t\t\t5. TEK-UP TUNES");
+    printf("\n\t\t\t0. EXIT");
+    printf("\n\n\n\t\t\tEnter Your Option: ");
+
+    scanf("%d", &x);
+
+
+     switch (x)
+        {
+        case 1:
+            system("cls");
+    printf("\n");
+
+        printf ("\n\t\t\t\t\t\t\t\t******Spark club******\n");
+        printf("\t\t\t--------------------------------------------------------------------------------------------------------\n");
+        printf("\n\t\t\tEngineers Spark TEK-UP aims to broaden the knowledge of students about technologies through activities,\n\t\t\tworkshops and events.");
+
+getch();
+break;
+        case 2:
+            system("cls");
+
+    printf("\n");
+         printf ("\n\t\t\t\t\t\t\t\t******ISACA tek-up student group******\n");
+         printf("\t\t\t---------------------------------------------------------------------------------------------------------\n");
+         printf("\n\t\t\tIt is created in late 2018 by a group of young cyber security enthausiastics in order to widen the community \n\t\t\tat a local and even national scale , to guide young IT lovers in their careers and to provide materials \n\t\t\tand a practical practice for their knowledge.");
+           getch();
+            break;
+        case 3:
+            system("cls");
+
+     printf("\n");
+         printf ("\n\t\t\t\t\t\t\t\t******ACM TEK-UP******\n");
+          printf("\t\t\t--------------------------------------------------------------------------------------------------------- \n ");
+         printf("\n\t\t\tACM, Association for Computing Machinery is a competitive programming club that aims to prepare students \n\t\t\tfor problem solving national and international contests where they will represent their university on the\n\t\t\tnational scale and beyond.");
+            getch();
+            break;
+        case 4:
+            system("cls");
+
+     printf("\n");
+         printf ("\n\t\t\t\t\t\t\t\t******IEEE TEK-UP******\n");
+          printf("\t\t\t------------------------------------------------------------------------------------------------------------ \n");
+         printf("\n\t\t\tThis student branch has several educational, technical and professional advantages like to Achieve high-level\n\t\t\t scientific objectives and Become a leader ");
+           getch();
+            break;
+        case 5:
+            system("cls");
+
+     printf("\n");
+         printf ("\n\t\t\t\t\t\t\t\t******TEK-UP TUNES******\n");
+          printf("\t\t\t----------------------------------------------------------------------------------------------------------- \n ");
+         printf("\n\t\t\tTEK-UP TUNES is interested in bringing music and joy to your university experience. Radio Tek is a Cultural \n\t\t\tand events club. We work to give all students the chance to be heard and to show their talents.");
+            getch();
+            break;
+
+        case 0:
+
+            printf("\n\t\t\t====== Thank You ======");
+            getch();
+            break;
+        default:
+            printf("\n\t\t\tInvalid Option, Please Enter Right Option !\n");
+            getch();
+
+        }
+
+
+        }   while (x != 0);
+
+}
